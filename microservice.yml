@@ -4,7 +4,7 @@ lifecycle:
     command: ["microservice-nexmo"]
 info:
   version: 1.0.0
-  title: mail
+  title: nexmo
   description: This is a nexmo service
   contact:
     name: Rohit Shetty
