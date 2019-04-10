@@ -10,7 +10,7 @@ import (
 
 //Send SMS
 func Send(responseWriter http.ResponseWriter, request *http.Request) {
-
+	responseWriter.Header().Set("Content-Type", "application/json")
 	var apiKey = os.Getenv("API_KEY")
 	var apiSecret = os.Getenv("API_SECRET")
 
