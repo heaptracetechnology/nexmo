@@ -47,6 +47,43 @@ actions:
         message:
           help: The object of send message response with status, message-id, to, remaining-balance, message-price, network.
           type: object
+  receive:
+    help: Start receiving  SMS
+    events:
+      hears:
+        help: Triggered anytime when any new SMS is occurred.
+        arguments: 
+          number:
+            type: string
+            in: requestBody
+            required: true
+            help: The phone number
+        http: 
+          port: 3000
+          subscribe:
+            method: post
+            path: /receive
+            contentType: application/json
+          unsubscribe:
+            path: /unsubscribe
+            method: post
+            contentType: application/json
+        output: 
+          contentType: application/json
+          type: object
+          properties:
+            event_type:
+              help: The type of event called
+              type: string
+            content_type:
+              help: The content type of method
+              type: string
+            event_id:
+              help: The event ID
+              type: string
+            data:
+              help: The message payload returned by telegram
+              type: object    
 environment:
   API_KEY:
     type: string
