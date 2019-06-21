@@ -1,42 +1,32 @@
-# Nexmo as a microservice
-An OMG service for Nexmo, it allows to send SMS.
+# _Nexmo_ OMG Microservice
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG-enabled-brightgreen.svg?style=for-the-badge)](https://microservice.guide)
 [![Build Status](https://travis-ci.com/microservice/nexmo.svg?branch=master)](https://travis-ci.com/microservice/nexmo)
 [![codecov](https://codecov.io/gh/microservice/nexmo/branch/master/graph/badge.svg)](https://codecov.io/gh/microservice/nexmo)
 
-## [OMG](hhttps://microservice.guide) CLI
 
-### OMG
+An OMG service for Nexmo, it allows to send SMS.
 
-* omg validate
-```
-omg validate
-```
-* omg build
-```
-omg build
-```
-### Test Service
-
-* Test the service by following OMG commands
-
-### CLI
+## Direct usage in [Storyscript](https://storyscript.io/):
 
 ##### Send SMS
-```sh
+```coffee
+>>> nexmo send from:'senderPhoneNumber' to:'receiverPhoneNumber' message:'messageText'
+{"message-count": "messageCount","messages": ["messageDetails"]}
+```
+
+Curious to [learn more](https://docs.storyscript.io/)?
+
+✨🍰✨
+
+## Usage with [OMG CLI](https://www.npmjs.com/package/omg)
+
+##### Send SMS
+```shell
 $ omg run send -a from=<SENDER_PHONE_NUMBER> -a to=<RECEIVER_PHONE_NUMBER> -a text=<MESSAGE_TEXT> -e API_KEY=<API_KEY> -e API_SECRET=<API_SECRET>
 ```
 
-## License
-### [MIT](https://choosealicense.com/licenses/mit/)
+**Note**: The OMG CLI requires [Docker](https://docs.docker.com/install/) to be installed.
 
-## Docker
-### Build
-```
-docker build -t microservice-nexmo .
-```
-### RUN
-```
-docker run -p 3000:3000 microservice-nexmo
-```
+## License
+[MIT License](https://github.com/omg-services/nexmo/blob/master/LICENSE).

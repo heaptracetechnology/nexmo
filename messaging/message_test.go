@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"net/http/httptest"
+	"os"
 )
 
 type SendSMS struct {
@@ -16,9 +17,18 @@ type SendSMS struct {
 	Text string `json:"text"`
 }
 
+var (
+	apiKey    = os.Getenv("NEXMO_API_KEY")
+	apiSecret = os.Getenv("NEXMO_API_SECRET")
+	from      = os.Getenv("NEXMO_FROM_NUMBER")
+	to        = os.Getenv("NEXMO_TO_NUMBER")
+)
+
 var _ = Describe("Send SMS", func() {
 
-	sms := SendSMS{From: "9876543210", To: "0123456789", Text: "Testing SMS"}
+	os.Setenv("API_KEY", apiKey)
+	os.Setenv("API_SECRET", apiSecret)
+	sms := SendSMS{From: from, To: to, Text: "Testing SMS"}
 	requestBody := new(bytes.Buffer)
 	errr := json.NewEncoder(requestBody).Encode(sms)
 	if errr != nil {
