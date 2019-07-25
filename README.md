@@ -1,7 +1,7 @@
 # _Nexmo_ OMG Microservice
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG-enabled-brightgreen.svg?style=for-the-badge)](https://microservice.guide)
-[[![Build Status](https://travis-ci.com/omg-services/nexmo.svg?branch=master)](https://travis-ci.com/omg-services/nexmo)
+[![Build Status](https://travis-ci.com/omg-services/nexmo.svg?branch=master)](https://travis-ci.com/omg-services/nexmo)
 [![codecov](https://codecov.io/gh/omg-services/nexmo/branch/master/graph/badge.svg)](https://codecov.io/gh/omg-services/nexmo)
 
 
