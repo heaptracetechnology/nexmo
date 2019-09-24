@@ -40,13 +40,6 @@ actions:
     output:
       type: object
       contentType: application/json
-      properties:
-        message-count:
-          help: The number of message count
-          type: int
-        message:
-          help: The object of send message response with status, message-id, to, remaining-balance, message-price, network.
-          type: object
 environment:
   API_KEY:
     type: string
